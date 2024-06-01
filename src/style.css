@@ -1,0 +1,87 @@
+#log-panel {
+  box-sizing: border-box;
+  font-family: "Courier New", Courier, monospace;
+  box-sizing: border-box;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100vw;
+  padding: 16px;
+  overflow: hidden;
+  background: #222225;
+  font-size: 16px;
+}
+
+#log-panel-messages {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2em;
+  max-height: 100%;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+
+  &::-webkit-scrollbar {
+    width: 0.5em;
+  }
+
+  /* Handle */
+  &::-webkit-scrollbar-thumb {
+    background: #414146;
+    border-radius: 24px;
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background: #8b8b92;
+  }
+
+  &::-webkit-scrollbar-thumb:active {
+    background: #5d5d64;
+  }
+}
+
+#log-panel-messages .log {
+  box-sizing: border-box;
+  color: #fdf6f6;
+  border-bottom: 1px dashed #fff;
+  padding-block: 0.5em;
+
+  .timestamp {
+    color: #5fbbf2;
+  }
+
+  .level-info {
+    color: #6bf25f;
+  }
+
+  .level-warn {
+    color: #f2d25f;
+  }
+
+  .level-err {
+    color: #f25f5f;
+  }
+}
+
+#log-panel #size-handle {
+  box-sizing: border-box;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 0;
+  height: 0.5em;
+  width: 20%;
+  cursor: ns-resize;
+  background: #414146;
+  border-radius: 0 0 24px 24px;
+  border: none;
+}
+
+#log-panel #size-handle:hover {
+  background: #8b8b92;
+}
+
+#log-panel #size-handle:active {
+  background: #5d5d64;
+}
